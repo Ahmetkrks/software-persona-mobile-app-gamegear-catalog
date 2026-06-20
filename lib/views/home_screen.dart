@@ -4,6 +4,7 @@ import '../components/category_chip.dart';
 import '../components/product_item_tile.dart';
 import '../models/product_model.dart';
 import '../services/product_service.dart';
+import 'product_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -102,7 +103,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   sliver: SliverGrid(
                     delegate: SliverChildBuilderDelegate(
                       (context, index) {
-                        return ProductItemTile(product: products[index]);
+                        final product = products[index];
+
+                        return ProductItemTile(
+                          product: product,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProductDetailScreen(
+                                  product: product,
+                                ),
+                              ),
+                            );
+                          },
+                        );
                       },
                       childCount: products.length,
                     ),
