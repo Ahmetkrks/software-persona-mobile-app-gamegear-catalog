@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "AeroClick Wireless Mouse",
+    "category": "Mouse",
+    "subtitle": "Lightweight precision for fast aim",
+    "description": "A responsive wireless gaming mouse built for quick movements, comfortable grip, and long practice sessions.",
+    "price": 59.99,
+    "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80",
+    "specs": ["Wireless", "16000 DPI", "RGB", "72g"]
+  },
+  {
+    "id": 2,
+    "name": "NovaKeys TKL Keyboard",
+    "category": "Keyboard",
+    "subtitle": "Compact mechanical keyboard",
+    "description": "A tenkeyless mechanical keyboard with crisp switches, clean lighting, and a compact layout for more desk space.",
+    "price": 89.99,
+    "imageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b90a?auto=format&fit=crop&w=900&q=80",
+    "specs": ["Mechanical", "TKL", "Blue Switches", "USB-C"]
+  },
+  {
+    "id": 3,
+    "name": "PulseX Gaming Headset",
+    "category": "Audio",
+    "subtitle": "Clear chat and deep sound",
+    "description": "A comfortable gaming headset with a flexible microphone, padded ear cups, and balanced sound for games and calls.",
+    "price": 74.99,
+    "imageUrl": "https://images.unsplash.com/photo-1599669454699-248893623440?auto=format&fit=crop&w=900&q=80",
+    "specs": ["7.1 Audio", "Noise Mic", "Memory Foam", "3.5mm"]
+  },
+  {
+    "id": 4,
+    "name": "GlidePro Mouse Pad",
+    "category": "Desk",
+    "subtitle": "Wide surface with smooth control",
+    "description": "An extended mouse pad that gives your keyboard and mouse a stable surface with smooth tracking and stitched edges.",
+    "price": 24.99,
+    "imageUrl": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=900&q=80",
+    "specs": ["Extended", "Stitched Edge", "Anti-slip", "Water Resistant"]
+  },
+  {
+    "id": 5,
+    "name": "StreamCam Mini",
+    "category": "Streaming",
+    "subtitle": "Sharp video for streams and classes",
+    "description": "A compact webcam for streaming, online lessons, and video calls with easy monitor mounting.",
+    "price": 49.99,
+    "imageUrl": "https://images.unsplash.com/photo-1623949556303-b0d17d198863?auto=format&fit=crop&w=900&q=80",
+    "specs": ["1080p", "Auto Focus", "USB", "Built-in Mic"]
+  },
+  {
+    "id": 6,
+    "name": "ChargeDock Controller Stand",
+    "category": "Console",
+    "subtitle": "Display and charge your controller",
+    "description": "A simple charging dock that keeps your controller ready, organized, and easy to grab before a match.",
+    "price": 34.99,
+    "imageUrl": "https://images.unsplash.com/photo-1605901309584-818e25960a8f?auto=format&fit=crop&w=900&q=80",
+    "specs": ["Fast Charge", "LED Status", "USB-C", "Compact"]
+  }
+]
