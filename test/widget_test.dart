@@ -1,28 +1,28 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:game_gear_catalog/main.dart';
 
 void main() {
-  testWidgets('opens product detail screen from the home grid', (
+  testWidgets('filters products by search and category', (
     WidgetTester tester,
   ) async {
     await tester.pumpWidget(const MyApp());
     await tester.pumpAndSettle();
 
-    expect(find.text('Discover'), findsOneWidget);
     expect(find.text('AeroClick Wireless Mouse'), findsOneWidget);
+    expect(find.text('NovaKeys TKL Keyboard'), findsOneWidget);
 
-    await tester.ensureVisible(find.text('AeroClick Wireless Mouse'));
+    await tester.enterText(find.byType(EditableText), 'keyboard');
     await tester.pumpAndSettle();
-    await tester.tap(find.text('AeroClick Wireless Mouse'));
+
+    expect(find.text('NovaKeys TKL Keyboard'), findsOneWidget);
+    expect(find.text('AeroClick Wireless Mouse'), findsNothing);
+
+    await tester.tap(find.text('Desk'));
     await tester.pumpAndSettle();
 
-    expect(find.text('Specs'), findsOneWidget);
-    expect(find.text('Add to Cart'), findsOneWidget);
-
-    await tester.tap(find.text('Add to Cart'));
-    await tester.pump();
-
-    expect(find.text('Product added to cart'), findsOneWidget);
+    expect(find.text('No products found.'), findsOneWidget);
   });
 }
+
