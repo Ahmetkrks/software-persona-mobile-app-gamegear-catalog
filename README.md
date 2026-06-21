@@ -1,44 +1,102 @@
 # GameGear Catalog
 
-A simple Flutter mini e-commerce catalog app for gaming accessories and tech products. The app is built for a beginner Flutter course and uses local JSON dummy data instead of a backend, checkout, cart system, or payment flow.
+**GameGear Catalog**, Flutter ile geliştirilmiş basit bir mini katalog / mini e-ticaret uygulamasıdır.
+Proje, Software Persona mobil proje teslimi kapsamında hazırlanmıştır ve Flutter eğitiminde anlatılan temel konuları uygulamalı olarak göstermek amacıyla geliştirilmiştir.
 
-## Features
+Uygulamada oyuncu ekipmanları ve teknoloji ürünleri listelenir. Kullanıcı ürünleri inceleyebilir, ürün detay sayfasına geçebilir, arama ve kategori filtreleme yapabilir. Ayrıca gerçek ödeme veya satın alma işlemi bulunmadan, yalnızca eğitim amaçlı basit bir sepet simülasyonu kullanılır.
 
-- Clean home screen with the title `Discover` and subtitle `Find your next gear.`
-- Local product data loaded from `assets/data/products.json`.
-- Product grid built with `GridView`/sliver grid style layout.
-- Rounded product cards with image, name, subtitle, and price.
-- Product detail screen with image, category, description, specs, and price.
-- Add to Cart button that saves products into an in-app local cart store.
-- Cart screen for viewing added products, quantities, total price, and removing items.
-- Search field for filtering products by name, subtitle, or category.
-- Horizontal category filter chips.
-- `Image.network` product images with an `errorBuilder` fallback.
-- No third-party Flutter packages.
+---
 
-## Flutter Version
+## Projenin Amacı
 
-Placeholder: `Flutter SDK version used: __________`
+Bu projenin amacı, Flutter kullanarak temel seviyede çalışan bir mobil katalog uygulaması geliştirmektir.
 
-During development on this machine:
+Proje kapsamında aşağıdaki Flutter konuları uygulanmıştır:
+
+* Flutter proje yapısı
+* Widget mantığı
+* `StatelessWidget` ve `StatefulWidget` kullanımı
+* Sayfa tasarımı
+* Sayfalar arası geçiş
+* `Navigator.push` / `Navigator.pop`
+* Model sınıfı oluşturma
+* Local JSON verisi okuma
+* `fromJson` / `toJson` mantığı
+* `GridView` ile ürün listeleme
+* Arama ve kategori filtreleme
+* Görsel kullanımı
+* Basit state güncelleme
+* Temiz klasör yapısı
+
+---
+
+## Uygulama Özellikleri
+
+* Ana sayfada ürün listeleme ekranı
+* Ürün detay sayfası
+* Local JSON dummy data kullanımı
+* Ürün modeli oluşturma
+* `fromJson` ve `toJson` kullanımı
+* `GridView` tabanlı ürün kartları
+* Ürün adına, alt açıklamasına veya kategorisine göre arama
+* Yatay kategori filtreleme alanı
+* Ürün detayına veri taşıma
+* Basit sepet simülasyonu
+* Sepete ürün ekleme
+* Sepette ürün görüntüleme
+* Ürün adedi ve toplam fiyat gösterimi
+* Sepetten ürün kaldırma
+* `Image.network` kullanımı
+* Görsel yüklenemediğinde fallback hata görünümü
+* Harici Flutter paketi kullanılmadan geliştirme
+
+---
+
+## Kullanılan Teknolojiler
+
+* Flutter
+* Dart
+* Material Design
+* Local JSON
+* Android Emulator
+* Visual Studio Code
+* Android Studio
+
+---
+
+## Flutter Sürümü
+
+Bu proje aşağıdaki Flutter ve Dart sürümleriyle geliştirilmiştir:
 
 ```text
 Flutter 3.44.2
 Dart 3.12.2
 ```
 
-## Project Structure
+Kendi bilgisayarınızda kurulu Flutter sürümünü görmek için:
+
+```bash
+flutter --version
+```
+
+---
+
+## Proje Klasör Yapısı
 
 ```text
 lib/
   main.dart
+
   components/
     product_item_tile.dart
     category_chip.dart
+
   models/
     product_model.dart
+
   services/
     product_service.dart
+
   views/
     home_screen.dart
     product_detail_screen.dart
@@ -49,62 +107,152 @@ assets/
     products.json
 ```
 
-## How to Run
+---
 
-Get dependencies:
+## Veri Kaynağı
 
-```powershell
+Projede gerçek bir backend veya canlı API kullanılmamıştır.
+Ürün verileri eğitim amaçlı olarak local JSON dosyası üzerinden okunmaktadır.
+
+Kullanılan veri dosyası:
+
+```text
+assets/data/products.json
+```
+
+Bu dosyada ürün adı, kategori, açıklama, fiyat, görsel adresi ve teknik özellikler gibi bilgiler tutulur.
+
+---
+
+## Uygulama Ekranları
+
+Projede temel olarak aşağıdaki ekranlar bulunmaktadır:
+
+### 1. Ana Sayfa
+
+Ana sayfada ürünler kart yapısıyla listelenir.
+Kullanıcı arama kutusu ile ürünleri filtreleyebilir ve kategori seçenekleriyle listeyi daraltabilir.
+
+Ana sayfada bulunan temel yapılar:
+
+* Başlık alanı
+* Arama kutusu
+* Kategori filtreleri
+* Ürün grid yapısı
+* Ürün kartları
+* Sepet ekranına geçiş
+
+### 2. Ürün Detay Sayfası
+
+Ürün kartına tıklandığında detay sayfasına geçilir.
+Bu sayfada seçilen ürüne ait detaylı bilgiler gösterilir.
+
+Detay sayfasında bulunan bilgiler:
+
+* Ürün görseli
+* Ürün adı
+* Kategori
+* Açıklama
+* Teknik özellikler
+* Fiyat
+* Sepete ekle butonu
+
+### 3. Sepet Sayfası
+
+Sepet ekranı gerçek ödeme işlemi içermez.
+
+Sepet ekranında bulunan yapılar:
+
+* Sepete eklenen ürünler
+* Ürün adetleri
+* Ürün kaldırma işlemi
+* Toplam fiyat bilgisi
+
+---
+
+## Kurulum ve Çalıştırma
+
+Projeyi çalıştırmadan önce Flutter SDK kurulu olmalıdır.
+
+Bağımlılıkları yüklemek için:
+
+```bash
 flutter pub get
 ```
 
-Check connected devices:
+Bağlı cihazları veya açık emülatörleri görmek için:
 
-```powershell
+```bash
 flutter devices
 ```
 
-Check available Android emulators:
+Mevcut Android emülatörlerini listelemek için:
 
-```powershell
+```bash
 flutter emulators
 ```
 
-Launch an emulator:
+Bir emülatörü başlatmak için:
 
-```powershell
+```bash
 flutter emulators --launch <emulator_id>
 ```
 
-Analyze the project:
+Projeyi analiz etmek için:
 
-```powershell
+```bash
 flutter analyze
 ```
 
-Run tests:
+Testleri çalıştırmak için:
 
-```powershell
+```bash
 flutter test
 ```
 
-Run the app:
+Uygulamayı çalıştırmak için:
 
-```powershell
+```bash
 flutter run
 ```
 
-## Screenshots
+---
 
-Add screenshots here after running the app on an emulator or device.
+## Android Emulator ile Test Etme
 
-Suggested screenshots:
+Proje Android Emulator üzerinde test edilebilir.
 
-- Home product grid
-- Search results
-- Category filter result
-- Product detail page
-- Cart page with added products
-- Add to Cart SnackBar
+Önerilen test adımları:
+
+```bash
+flutter doctor
+```
+
+```bash
+flutter devices
+```
+
+```bash
+flutter pub get
+```
+
+```bash
+flutter analyze
+```
+
+```bash
+flutter run
+```
 
 
+## Ekran Görüntüleri
 
+Teslim öncesinde uygulamaya ait ekran görüntüleri bu bölüme eklenmelidir.
+
+Önerilen ekran görüntüleri:
+
+* Ana sayfa ürün listesi
+* Arama sonucu ekranı
+* Kategori filtreleme ekranı
+* Ürün detay sayfası
+* Sepet ekranı
