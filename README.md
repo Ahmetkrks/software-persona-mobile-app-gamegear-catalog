@@ -1,3 +1,4 @@
+
 # GameGear Catalog
 
 **GameGear Catalog**, Flutter ile geliştirilmiş basit bir mini katalog / mini e-ticaret uygulamasıdır.
@@ -247,12 +248,82 @@ flutter run
 
 ## Ekran Görüntüleri
 
-Teslim öncesinde uygulamaya ait ekran görüntüleri bu bölüme eklenmelidir.
+Aşağıda uygulamanın Android Emulator üzerinde alınmış ekran görüntüleri yer almaktadır.  
+Görsellerin tam boyutunu görüntülemek için ekran görüntülerine tıklayabilirsiniz.
 
-Önerilen ekran görüntüleri:
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Ana Sayfa Ürün Listesi</strong>
+      <br><br>
+      <a href="https://github.com/user-attachments/assets/f22a8410-18de-46bc-8428-c9427ce5ea6c">
+        <img
+          src="https://github.com/user-attachments/assets/f22a8410-18de-46bc-8428-c9427ce5ea6c"
+          width="390"
+          alt="Ana Sayfa Ürün Listesi"
+        />
+      </a>
+    </td>
+    <td align="center" width="50%">
+      <strong>Arama Sonucu Ekranı</strong>
+      <br><br>
+      <a href="https://github.com/user-attachments/assets/b2d83125-ba28-4859-bd10-0ead083e2a6c">
+        <img
+          src="https://github.com/user-attachments/assets/b2d83125-ba28-4859-bd10-0ead083e2a6c"
+          width="390"
+          alt="Arama Sonucu Ekranı"
+        />
+      </a>
+    </td>
+  </tr>
 
-* Ana sayfa ürün listesi
-* Arama sonucu ekranı
-* Kategori filtreleme ekranı
-* Ürün detay sayfası
-* Sepet ekranı
+  <tr>
+    <td align="center" width="50%">
+      <strong>Kategori Filtreleme Ekranı</strong>
+      <br><br>
+      <a href="https://github.com/user-attachments/assets/f505f3c0-d9a8-40c6-a126-e36c68e9278d">
+        <img
+          src="https://github.com/user-attachments/assets/f505f3c0-d9a8-40c6-a126-e36c68e9278d"
+          width="390"
+          alt="Kategori Filtreleme Ekranı"
+        />
+      </a>
+    </td>
+    <td align="center" width="50%">
+      <strong>Ürün Detay Sayfası</strong>
+      <br><br>
+      <a href="https://github.com/user-attachments/assets/4ad6d5dd-66be-4561-a99e-025ef54b66a8">
+        <img
+          src="https://github.com/user-attachments/assets/4ad6d5dd-66be-4561-a99e-025ef54b66a8"
+          width="390"
+          alt="Ürün Detay Sayfası"
+        />
+      </a>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" width="50%">
+      <strong>Ürün Detay Sayfası - Devam</strong>
+      <br><br>
+      <a href="https://github.com/user-attachments/assets/9fa0f795-4544-42c5-bc9c-0d67486bc2de">
+        <img
+          src="https://github.com/user-attachments/assets/9fa0f795-4544-42c5-bc9c-0d67486bc2de"
+          width="390"
+          alt="Ürün Detay Sayfası Devam"
+        />
+      </a>
+    </td>
+    <td align="center" width="50%">
+      <strong>Sepet Ekranı</strong>
+      <br><br>
+      <a href="https://github.com/user-attachments/assets/f9fd3f23-63d4-4826-8d16-4f438a3a29fd">
+        <img
+          src="https://github.com/user-attachments/assets/f9fd3f23-63d4-4826-8d16-4f438a3a29fd"
+          width="390"
+          alt="Sepet Ekranı"
+        />
+      </a>
+    </td>
+  </tr>
+</table>
