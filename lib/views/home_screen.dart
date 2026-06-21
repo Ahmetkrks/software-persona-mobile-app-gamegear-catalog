@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../components/category_chip.dart';
 import '../components/product_item_tile.dart';
+import '../models/cart_item_model.dart';
 import '../models/product_model.dart';
+import '../services/cart_service.dart';
 import '../services/product_service.dart';
+import 'cart_screen.dart';
 import 'product_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -35,9 +38,10 @@ class _HomeScreenState extends State<HomeScreen> {
     final query = _searchText.toLowerCase().trim();
 
     return products.where((product) {
-      final matchesCategory = _selectedCategory == 'All' ||
-          product.category == _selectedCategory;
-      final matchesSearch = query.isEmpty ||
+      final matchesCategory =
+          _selectedCategory == 'All' || product.category == _selectedCategory;
+      final matchesSearch =
+          query.isEmpty ||
           product.name.toLowerCase().contains(query) ||
           product.subtitle.toLowerCase().contains(query) ||
           product.category.toLowerCase().contains(query);
@@ -52,6 +56,13 @@ class _HomeScreenState extends State<HomeScreen> {
       MaterialPageRoute(
         builder: (context) => ProductDetailScreen(product: product),
       ),
+    );
+  }
+
+  void _openCart() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const CartScreen()),
     );
   }
 
@@ -85,20 +96,33 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'Discover',
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 6),
-                        Text(
-                          'Find your next gear.',
-                          style: TextStyle(
-                            color: Colors.grey.shade600,
-                            fontSize: 16,
-                          ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Discover',
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 6),
+                                  Text(
+                                    'Find your next gear.',
+                                    style: TextStyle(
+                                      color: Colors.grey.shade600,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            _CartButton(onTap: _openCart),
+                          ],
                         ),
                         const SizedBox(height: 20),
                         TextField(
@@ -168,24 +192,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   SliverPadding(
                     padding: const EdgeInsets.all(20),
                     sliver: SliverGrid(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) {
-                          final product = filteredProducts[index];
+                      delegate: SliverChildBuilderDelegate((context, index) {
+                        final product = filteredProducts[index];
 
-                          return ProductItemTile(
-                            product: product,
-                            onTap: () => _openProductDetail(product),
-                          );
-                        },
-                        childCount: filteredProducts.length,
-                      ),
+                        return ProductItemTile(
+                          product: product,
+                          onTap: () => _openProductDetail(product),
+                        );
+                      }, childCount: filteredProducts.length),
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 16,
-                        crossAxisSpacing: 16,
-                        childAspectRatio: 0.68,
-                      ),
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 16,
+                            crossAxisSpacing: 16,
+                            childAspectRatio: 0.68,
+                          ),
                     ),
                   ),
               ],
@@ -193,6 +214,56 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
       ),
+    );
+  }
+}
+
+class _CartButton extends StatelessWidget {
+  final VoidCallback onTap;
+
+  const _CartButton({required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder<List<CartItemModel>>(
+      valueListenable: CartService.instance.items,
+      builder: (context, items, child) {
+        final itemCount = CartService.instance.totalItems;
+
+        return Stack(
+          clipBehavior: Clip.none,
+          children: [
+            IconButton(
+              onPressed: onTap,
+              icon: const Icon(Icons.shopping_bag_outlined),
+              tooltip: 'Cart',
+            ),
+            if (itemCount > 0)
+              Positioned(
+                right: 4,
+                top: 2,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 6,
+                    vertical: 2,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(
+                    '$itemCount',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        );
+      },
     );
   }
 }

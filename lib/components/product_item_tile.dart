@@ -6,11 +6,7 @@ class ProductItemTile extends StatelessWidget {
   final ProductModel product;
   final VoidCallback? onTap;
 
-  const ProductItemTile({
-    super.key,
-    required this.product,
-    this.onTap,
-  });
+  const ProductItemTile({super.key, required this.product, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -75,10 +71,7 @@ class ProductItemTile extends StatelessWidget {
                     product.subtitle,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: Colors.grey.shade600,
-                      fontSize: 12,
-                    ),
+                    style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
                   ),
                   const SizedBox(height: 8),
                   Text(

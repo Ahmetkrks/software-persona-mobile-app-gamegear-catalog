@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../models/product_model.dart';
+import '../services/cart_service.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   final ProductModel product;
 
-  const ProductDetailScreen({
-    super.key,
-    required this.product,
-  });
+  const ProductDetailScreen({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -155,10 +153,9 @@ class ProductDetailScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
+                      CartService.instance.addProduct(product);
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Product added to cart'),
-                        ),
+                        const SnackBar(content: Text('Product added to cart')),
                       );
                     },
                     style: ElevatedButton.styleFrom(

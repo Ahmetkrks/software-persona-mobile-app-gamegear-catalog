@@ -9,7 +9,8 @@ A simple Flutter mini e-commerce catalog app for gaming accessories and tech pro
 - Product grid built with `GridView`/sliver grid style layout.
 - Rounded product cards with image, name, subtitle, and price.
 - Product detail screen with image, category, description, specs, and price.
-- `Add to Cart` button that only shows a SnackBar message.
+- Add to Cart button that saves products into an in-app local cart store.
+- Cart screen for viewing added products, quantities, total price, and removing items.
 - Search field for filtering products by name, subtitle, or category.
 - Horizontal category filter chips.
 - `Image.network` product images with an `errorBuilder` fallback.
@@ -41,6 +42,7 @@ lib/
   views/
     home_screen.dart
     product_detail_screen.dart
+    cart_screen.dart
 
 assets/
   data/
@@ -101,4 +103,8 @@ Suggested screenshots:
 - Search results
 - Category filter result
 - Product detail page
+- Cart page with added products
 - Add to Cart SnackBar
+
+
+
